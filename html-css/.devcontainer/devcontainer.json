@@ -1,0 +1,17 @@
+{
+    "name": "Alura+ Web",
+    "dockerComposeFile": [
+        "../compose.yaml",
+        "docker-compose.dev.yaml"
+    ],
+    "service": "alura_plus-webpage",
+    "workspaceFolder": "/alura_plus-webpage",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ritwickdey.LiveServer",
+                "esbenp.prettier-vscode"
+            ]
+        }
+    },
+}

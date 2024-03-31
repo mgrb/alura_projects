@@ -1,0 +1,9 @@
+services:
+  alura_plus-webpage: 
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile.dev
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/alura_plus-webpage:cached

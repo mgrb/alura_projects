@@ -1,0 +1,10 @@
+FROM nginx
+
+COPY .devcontainer/nginx.dev.conf /etc/nginx/conf.d/alura_plus-webpage.conf
+
+WORKDIR /alura_plus-webpage
+
+EXPOSE 8080
+
+CMD [ "nginx", "-g", "daemon off;"]
+# CMD [ "tail", "-f", "/dev/null"]
