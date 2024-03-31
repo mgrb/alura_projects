@@ -1,4 +1,7 @@
-class Veiculo:
+from abc import ABC, abstractmethod
+
+
+class Veiculo(ABC):
     def __init__(self, marca: str, modelo: str) -> None:
         self._marca: str = marca
         self._modelo: str = modelo
@@ -10,3 +13,7 @@ class Veiculo:
     @property
     def status(self) -> str:
         return 'ligado' if self._ligado else 'desligado'
+
+    @abstractmethod
+    def ligar(self) -> None:
+        pass

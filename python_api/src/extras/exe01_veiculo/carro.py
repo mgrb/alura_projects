@@ -8,3 +8,7 @@ class Carro(Veiculo):
 
     def __str__(self) -> str:
         return f'{super().__str__()} - {self._portas} portas'
+
+    def ligar(self) -> None:
+        self._ligado = True
+        print(f'O {self.__class__.__name__} foi ligado')
