@@ -2,6 +2,7 @@ from modelos.avaliacao import Avaliacao
 from modelos.cardapio.bebida import Bebida
 from modelos.cardapio.item_cardapio import ItemCardapio
 from modelos.cardapio.prato import Prato
+from modelos.cardapio.sobremesa import Sobremesa
 
 
 class Restaurante:
@@ -63,4 +64,9 @@ class Restaurante:
         print('Pratos:')
         for i, item in enumerate(self._cardapio, 1):
             if isinstance(item, Prato):
+                print(f'{i}. {item}')
+
+        print('Sobremesas:')
+        for i, item in enumerate(self._cardapio, 1):
+            if isinstance(item, Sobremesa):
                 print(f'{i}. {item}')
