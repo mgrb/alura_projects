@@ -4,4 +4,4 @@ class ItemCardapio:
         self._preco = preco
 
     def __str__(self):
-        return f'{self.nome} - R${self.preco:.2f}'
+        return f'{self._nome} - R${self._preco:.2f}'
