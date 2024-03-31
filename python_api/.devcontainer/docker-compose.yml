@@ -1,0 +1,7 @@
+services:
+  pyapp:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../:/workspace:cached

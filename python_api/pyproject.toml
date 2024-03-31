@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "alura api"
+version = "0.1.0"
+description = "Projeto de exercício para o curso de Python WEB API da Alura."
+authors = ["Marlos Ribeiro"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.3.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
