@@ -1,0 +1,13 @@
+# Ignorar arquivos e diretórios comuns
+__pycache__
+*.pyc
+*.pyo
+
+# Ignorar arquivos de log
+*.log
+
+# Ignorar arquivos de configuração específicos do sistema
+.DS_Store
+
+# Ignorar a pasta .devcontainer
+.devcontainer
