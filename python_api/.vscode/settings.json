@@ -1,4 +1,20 @@
 {
+    // GENERAL Configurations
+    "python.defaultInterpreterPath": ".venv/bin/python",
+    "evenBetterToml.formatter.allowedBlankLines": 2,
+    "evenBetterToml.formatter.columnWidth": 80,
+    "editor.formatOnSave": true,
+    // RUFF Configurations
+    "ruff.format.args": [
+        "--config=ruff.toml"
+    ],
+    "ruff.lint.args": [
+        "--config=ruff.toml"
+    ],
+    "ruff.interpreter": [
+        "python"
+    ],
+    // PYTHON Configurations
     "[python]": {
         "editor.defaultFormatter": "charliermarsh.ruff",
         "editor.formatOnSave": true,
@@ -6,12 +22,14 @@
             "source.fixAll.ruff": "explicit",
             "source.organizeImports.ruff": "explicit"
         },
-        "editor.wordWrap": "bounded"
+        "editor.wordWrap": "bounded",
+        "editor.wordWrapColumn": 80
     },
-    "python.defaultInterpreterPath": ".venv/bin/python",
-    "evenBetterToml.formatter.allowedBlankLines": 2,
-    "evenBetterToml.formatter.columnWidth": 80,
-
-    "ruff.lint.args": ["--config=ruff.toml"],
-    "ruff.format.args": ["--config=ruff.toml"]
+    // TOML Configurations
+    "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4,
+        "editor.autoIndent": "advanced",
+        "diffEditor.ignoreTrimWhitespace": false
+    },
 }

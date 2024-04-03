@@ -7,6 +7,7 @@ zsh \
 starship \
 openssh \
 pipx \
+make \
 && adduser -D -s /bin/zsh -u 1000 alura-usr 
 
 USER alura-usr
@@ -14,7 +15,7 @@ USER alura-usr
 ENV PATH="/home/alura-usr/.local/bin:${PATH}"
 ENV ZSH_THEME starship
 
-COPY .zshrc /home/alura-usr/
+COPY .zshrc /home/alura-usr
 
 SHELL ["/bin/zsh", "-c"]
 

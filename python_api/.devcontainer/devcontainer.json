@@ -1,6 +1,5 @@
 {
     "name": "Alura - Python API",
-
     "dockerComposeFile": "docker-compose.yml",
     "remoteUser": "alura-usr",
     "service": "pyapp",
@@ -15,5 +14,5 @@
             ]
         }
     },
-    "postCreateCommand": "poetry shell"
+    "postCreateCommand": "make"
 }
