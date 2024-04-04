@@ -14,7 +14,7 @@ def load_restaurantes_data() -> dict:
     url = (
         'https://guilhermeonrails.github.io/api-restaurantes/restaurantes.json'
     )
-    response = get(url, timeout=10)
+    response = get(url, timeout=60)
     restaurantes_data: dict = {}
     if response.status_code == status.HTTP_200_OK:
         response_json = response.json()
@@ -70,13 +70,17 @@ def read_root() -> dict:
 @app.get('/api/restaurantes')
 async def read_restaurantes(name: str = None) -> dict:
     """Get restaurantes data."""
+    return_data = {}
     if not name:
-        return restaurantes_cardapio
+        return_data = {'Dados': restaurantes_cardapio}
+    elif (name not in restaurantes_cardapio) or (
+        not restaurantes_cardapio[name]
+    ):
+        return_data = {'message': 'Restaurante não encontrado'}
+    else:
+        return_data = {'Dados': restaurantes_cardapio.get(name)}
 
-    if (name not in restaurantes_cardapio) or (not restaurantes_cardapio[name]):
-        return {'message': 'Restaurante não encontrado'}
-
-    return {'Dados': restaurantes_cardapio.get(name)}
+    return return_data
 
 
 if __name__ == '__main__':
