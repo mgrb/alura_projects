@@ -1,0 +1,6 @@
+@API_URI = "localhost:8888"
+
+### Resource: / (GET)
+GET http://{{API_URI}}/
+
+###

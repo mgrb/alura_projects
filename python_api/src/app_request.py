@@ -17,7 +17,7 @@ response = requests.get(restaurantes_url, timeout=10)
 
 dados_restaurante = {}
 
-if response.status_code == 200:
+if response.status_code == 200:  # noqa: PLR2004
     response_json = response.json()
     for restaurante in response_json:
         nome_restaurante = restaurante['Company']
