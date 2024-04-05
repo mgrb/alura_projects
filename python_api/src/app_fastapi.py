@@ -4,6 +4,7 @@ from contextlib import asynccontextmanager
 
 import uvicorn
 from fastapi import FastAPI, status
+from fastapi.middleware.cors import CORSMiddleware
 from requests import get
 
 from exception.ext_api_error import ExtAPIError
@@ -59,6 +60,16 @@ async def life_span(app: FastAPI) -> any:  # noqa: ARG001
 
 
 app = FastAPI(lifespan=life_span)
+
+origins = ['http://localhost', 'http://localhost:8888']
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=['*'],
+    allow_headers=['*'],
+)
 
 
 @app.get('/')
