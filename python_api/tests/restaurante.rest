@@ -1,0 +1,16 @@
+
+@api_uri = "http://127.0.0.1:8888"
+@host = localhost
+@port = 8888
+
+### GET / (Home)
+GET http://{{host}}:{{port}}/
+Content-Type: application/json
+
+### GET Cardápio por nome de restaurante
+# @prompt rest_name
+GET http://{{host}}:{{port}}/api/restaurantes?name={{rest_name}}
+Content-Type: application/json
+
+### GET Todos os restaurantes
+GET http://{{host}}:{{port}}/api/restaurantes

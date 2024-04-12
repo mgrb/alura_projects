@@ -1,0 +1,19 @@
+{
+    "name": "Alura - Python API",
+    "dockerComposeFile": "docker-compose.yml",
+    "remoteUser": "alura-usr",
+    "service": "pyapp",
+    "workspaceFolder": "/workspace",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "oderwat.indent-rainbow",
+                "charliermarsh.ruff",
+                "tamasfe.even-better-toml",
+                "humao.rest-client"
+            ]
+        }
+    },
+    "postCreateCommand": "make"
+}
