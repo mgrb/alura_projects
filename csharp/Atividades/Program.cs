@@ -45,6 +45,9 @@ void ChamarDesafio(int opc)
         case 4:
             Desafio_M03_ATV07();
             break;
+        case 5:
+            Desafio_M03_ATV08();
+            break;
         case 0:
             Console.WriteLine("Saindo...");
             break;
@@ -52,6 +55,40 @@ void ChamarDesafio(int opc)
             Console.WriteLine("Opção inválida");
             break;
     }
+}
+
+void Desafio_M03_ATV08()
+{
+    /*
+Crie uma lista de inteiros utilizando o List<int> e utilize o for e o foreach para iterar sobre essa lista e exibir apenas os números pares.
+
+No for, comece o índice em 0 e incremente a cada iteração. Defina a condição de continuação do loop como i < numeros.Count, ou seja, o loop continuará enquanto o valor de i for menor do que o número de elementos na lista. Acesse o valor de cada elemento utilizando a sintaxe numeros[i].
+
+Já no foreach, ao invés de utilizar um loop for com um contador i e acessar os elementos da lista através do índice i, é utilizado o foreach para percorrer a lista e acessar diretamente cada elemento com a variável número. Em seguida, é verificado se o número é par utilizando o operador de módulo (%) e, caso seja, o número é impresso no console.    
+    */
+
+    PrintTitulo("Módulo 03 - Atividade 08");
+
+    List<int> numeros = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+    Console.WriteLine("Números pares (for):");
+    for (int i = 0; i < numeros.Count; i++)
+    {
+        if (numeros[i] % 2 == 0)
+        {
+            Console.WriteLine(numeros[i]);
+        }
+    }
+
+    Console.WriteLine("Números pares (foreach):");
+    foreach (int n in numeros)
+    {
+        if (n % 2 == 0)
+        {
+            Console.WriteLine(n);
+        }
+    }
+
 }
 
 void Desafio_M03_ATV07()
@@ -205,7 +242,8 @@ List<string> desafios = new List<string> {
     "M01-AT06 :: Desafio: hora da prática", 
     "M02-AT08 :: Desafio: hora da prática",
     "M02-AT09 :: Faça como eu fiz: primeiro jogo com C#" ,
-    "M03-AT07 :: Desafio: hora da prática" };
+    "M03-AT07 :: Desafio: hora da prática",
+    "M03-AT08 :: Faça como eu fiz" };
 // -----------------
 
 while (true)
