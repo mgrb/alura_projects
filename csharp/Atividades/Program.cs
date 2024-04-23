@@ -18,15 +18,18 @@ void PrintListaDesafios(List<string> desafios)
     Console.WriteLine("0 - Sair");
 }
 
+
+void PrintTitulo(string titulo)
+{
+    int tamanho = titulo.Length;
+    string line = string.Empty.PadLeft(tamanho + 4, '+');
+    Console.WriteLine($"\n{line}\n  {titulo}\n{line}\n");
+}
+
 int LerOpcao()
 {
     Console.Write("Digite a opção desejada: ");
     return int.Parse(Console.ReadLine()!);
-}
-
-void PrintTitulo(string titulo)
-{
-    Console.WriteLine($"\n###\n{titulo}\n###");
 }
 
 void ChamarDesafio(int opc)
@@ -244,8 +247,6 @@ List<string> desafios = new List<string> {
     "M02-AT09 :: Faça como eu fiz: primeiro jogo com C#" ,
     "M03-AT07 :: Desafio: hora da prática",
     "M03-AT08 :: Faça como eu fiz" };
-// -----------------
-
 while (true)
 {
     Console.Clear();
@@ -261,3 +262,5 @@ while (true)
         Console.ReadKey();
     }
 }
+// -----------------
+
