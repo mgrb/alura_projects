@@ -8,37 +8,38 @@ FROM ubuntu:22.04
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Configure apt and install packages
-RUN apt-get update -y && \
-    apt-get upgrade -y && \
-    apt-get install -y \
+RUN apt-get update -y \
+    && apt-get upgrade -y \
+    && apt-get install -y \
     zsh \ 
     git \
     curl \
-    dotnet-sdk-8.0
+    dotnet-sdk-8.0 \
+    # Install Starship prompt
+    && sh -c "$(curl -sS https://starship.rs/install.sh)" -y -f \ 
+    # Clean up
+    && apt-get clean \
+    && apt-get autoclean \
+    && rm -rf /var/lib/apt/lists/* \
+    # Create a non-root user
+    && groupadd -r dotnet_grp \
+    && useradd -m -g dotnet_grp -u 1001 -s /bin/zsh dotnet_usr
 
-# Install Starship prompt
-RUN sh -c "$(curl -sS https://starship.rs/install.sh)" -y -f
-
-# Clean up
-RUN apt-get clean && \
-    apt-get autoclean  && \
-    rm -rf /var/lib/apt/lists/*
-
-# Create a non-root user
-RUN groupadd -r dotnet_grp && \
-    useradd -m -g dotnet_grp -u 1001 -s /bin/zsh dotnet_usr
-
+# Switch to non root user
 USER dotnet_usr
 
-# Install dotnet Entity Framework Core
-RUN dotnet tool install --global dotnet-ef
+# VAR ENV to dotnet
 ENV PATH="$PATH:/home/dotnet_usr/.dotnet/tools"
 ENV TMPDIR="/home/dotnet_usr/temp/"
-RUN mkdir -p $TMPDIR
+
+# Install dotnet Entity Framework Core
+RUN dotnet tool install --global dotnet-ef \
+    && mkdir -p $TMPDIR
 
 # coping zsh configuration
 COPY .zshrc /home/dotnet_usr/
 
+# Create workspace
 WORKDIR /dotnet_project
 
 COPY ../ .

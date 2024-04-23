@@ -1,8 +1,14 @@
 ﻿// PRATICAS em video
+List<string> bandas = new List<string>();
 
 void PrintMensagemTitulo(string mensagem)
 {
-    Console.WriteLine($"###\n{mensagem}\n###");
+    Console.WriteLine(@$"
++++++++++++++++++++++++++++++++++
+{mensagem}
+---------------------------------
+
+");
 }
 
 void PrintBoasVindas()
@@ -16,8 +22,6 @@ void PrintBoasVindas()
 ██████╔╝╚█████╔╝██║░░██║███████╗███████╗██║░╚███║  ██████╔╝╚█████╔╝╚██████╔╝██║░╚███║██████╔╝
 ╚═════╝░░╚════╝░╚═╝░░╚═╝╚══════╝╚══════╝╚═╝░░╚══╝  ╚═════╝░░╚════╝░░╚═════╝░╚═╝░░╚══╝╚═════╝░    
     ");
-    
-    PrintMensagemTitulo("Bem vindo!");
 }
 
 void PrintMenu()
@@ -43,10 +47,10 @@ void AvaliarOpcaoEscolhida(int opc)
     switch (opc)
     {
         case 1:
-            PrintMensagemTitulo("Registrar uma banda");
+            RegistrarBanda();
             break;
         case 2:
-            PrintMensagemTitulo("Mostrar todas as bandas");
+            MostrarTodasAsBandas();
             break;
         case 3:
             PrintMensagemTitulo("Avaliar uma banda");
@@ -64,10 +68,56 @@ void AvaliarOpcaoEscolhida(int opc)
 
 }
 
+void RegistrarBanda()
+{
+    Console.Clear();
+    PrintBoasVindas();
+    PrintMensagemTitulo("Registrar uma banda");
+    Console.Write("Digite o nome da banda: ");
+    string nomeDaBanda = Console.ReadLine()!;
+    bandas.Add(nomeDaBanda);
+    Console.Write($"A banda {nomeDaBanda} foi registrada com sucesso!");
+    Thread.Sleep(2000);
+
+}
+
+void MostrarTodasAsBandas()
+{
+    Console.Clear();
+    PrintBoasVindas();
+    PrintMensagemTitulo("Mostrar todas as bandas");
+    if (bandas.Count == 0)
+    {
+        Console.WriteLine("Nenhuma banda foi registrada ainda.");
+    }
+    else
+    {
+        foreach (var banda in bandas)
+        {
+            Console.WriteLine(banda);
+        }
+    }
+    Console.WriteLine("\nPressione qualquer tecla para continuar...");
+    Console.ReadKey();
+}
+
+void Main(){
+while (true)
+{
+    Console.Clear();
+    PrintBoasVindas();
+    PrintMensagemTitulo("Bem vindo!");
+    PrintMenu();
+    int opcEscolhida = LerOpcao();
+    AvaliarOpcaoEscolhida(opcEscolhida);
+    if (opcEscolhida == 0)
+    {
+        break;
+    }
+}
+
+}
 // -----------------------------------------------------------------------------
 // Inicio do programa
-PrintBoasVindas();
-PrintMenu();
-int opcEscolhida = LerOpcao();
-AvaliarOpcaoEscolhida(opcEscolhida);
+Main();
 
