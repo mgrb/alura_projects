@@ -42,6 +42,9 @@ void ChamarDesafio(int opc)
         case 3:
             Desafio_M02_ATV09();
             break;
+        case 4:
+            Desafio_M03_ATV07();
+            break;
         case 0:
             Console.WriteLine("Saindo...");
             break;
@@ -49,6 +52,55 @@ void ChamarDesafio(int opc)
             Console.WriteLine("Opção inválida");
             break;
     }
+}
+
+void Desafio_M03_ATV07()
+{
+    /*
+1. Escrever uma função que a partir de dois números de ponto flutuante a e b exiba no console o resultado de suas quatro operações básicas (adição, subtração, divisão e multiplicação), utilizando interpolação de strings.
+
+2. Criar uma lista de bandas vazia e adicionar suas bandas prediletas em seguida.
+
+3. Utilizar a estrutura 'for' para mostrar todas as suas bandas preferidas, listadas na lista do exercício anterior, no console.
+
+4. Criar um programa que calcula a soma de todos os elementos inteiros em uma lista.    
+    */
+
+    PrintTitulo("Módulo 03 - Atividade 07");
+    // 01.
+    float a = 10.5f;
+    float b = 5.5f;
+    ExibirOperacoes(a, b);
+
+    // 02.
+    List<string> bandas = new List<string>();
+    bandas.Add("Led Zeppelin");
+    bandas.Add("Pink Floyd");
+    bandas.Add("The Beatles");
+
+    // 03.
+    for (int i = 0; i < bandas.Count; i++)
+    {
+        Console.WriteLine(bandas[i]);
+    }
+
+    // 04.
+    List<int> numeros = new List<int> { 1, 2, 3, 4, 5 };
+    int soma = 0;
+    foreach (int n in numeros)
+    {
+        soma += n;
+    }
+    Console.WriteLine($"Soma dos elementos da lista: {soma}");
+
+}
+
+void ExibirOperacoes(float a, float b)
+{
+    Console.WriteLine($"Adição: {a + b}");
+    Console.WriteLine($"Subtração: {a - b}");
+    Console.WriteLine($"Multiplicação: {a * b}");
+    Console.WriteLine($"Divisão: {a / b}");
 }
 
 void Desafio_M02_ATV09()
@@ -152,7 +204,8 @@ void Atividade_M01_ATV06()
 List<string> desafios = new List<string> { 
     "M01-AT06 :: Desafio: hora da prática", 
     "M02-AT08 :: Desafio: hora da prática",
-    "M02-AT09 :: Faça como eu fiz: primeiro jogo com C#" };
+    "M02-AT09 :: Faça como eu fiz: primeiro jogo com C#" ,
+    "M03-AT07 :: Desafio: hora da prática" };
 // -----------------
 
 while (true)
