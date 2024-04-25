@@ -53,6 +53,9 @@ void ChamarDesafio(int opc)
         case 6:
             Desafio_M04_ATV08();
             break;
+        case 7:
+            Desafio_M04_ATV09();
+            break;
         case 0:
             Console.WriteLine("Saindo...");
             break;
@@ -60,6 +63,32 @@ void ChamarDesafio(int opc)
             Console.WriteLine("Opção inválida");
             break;
     }
+}
+
+void Desafio_M04_ATV09()
+{
+    /*
+Com base na lista de super carros fornecida acima, onde a chave é o nome do carro e os valores são quantas vezes esse carro foi vendido por ano, calcule a média de uma chave específica.
+    */
+
+    Dictionary<string, List<int>> vendasCarros = new Dictionary<string, List<int>> {
+        { "Bugatti Veyron", new List<int> { 10, 15, 12, 8, 5 } },
+        { "Koenigsegg Agera RS", new List<int> { 2, 3, 5, 6, 7 } },
+        { "Lamborghini Aventador", new List<int> { 20, 18, 22, 24, 16 } },
+        { "Pagani Huayra", new List<int> { 4, 5, 6, 5, 4 } },
+        { "Ferrari LaFerrari", new List<int> { 7, 6, 5, 8, 10 } }
+    };
+
+    string carro = "Lamborghini Aventador";
+    
+    if (vendasCarros.ContainsKey(carro))
+    {
+        double media = vendasCarros[carro].Average();
+        Console.WriteLine($"Média de vendas por ano do {carro}: {media}");
+    } else {
+        Console.WriteLine("Carro não encontrado");
+    }
+
 }
 
 void Desafio_M04_ATV08()
@@ -324,7 +353,8 @@ List<string> desafios = new List<string> {
     "M02-AT09 :: Faça como eu fiz: primeiro jogo com C#" ,
     "M03-AT07 :: Desafio: hora da prática",
     "M03-AT08 :: Faça como eu fiz",
-    "M04-AT08 :: Desafio: hora da prática" };
+    "M04-AT08 :: Desafio: hora da prática",
+    "M04-AT09 :: Faça como eu fiz" };
 while (true)
 {
     Console.Clear();
