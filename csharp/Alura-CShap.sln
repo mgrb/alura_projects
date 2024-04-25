@@ -3,17 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenSound", "ScreenSound\ScreenSound.csproj", "{BD85498C-5405-4560-85E4-CD51205A6FE5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenSound.LANG", "ScreenSound\ScreenSound.LANG.csproj", "{BD85498C-5405-4560-85E4-CD51205A6FE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atividades", "Atividades\Atividades.csproj", "{A2040025-0B07-46FB-A05A-144B3908EB04}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atividades.LANG", "Atividades\Atividades.LANG.csproj", "{A2040025-0B07-46FB-A05A-144B3908EB04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenSound.POO", "ScreenSound.POO\ScreenSound.POO.csproj", "{A3F14BCB-1B2B-48A8-9AAA-FD44004110F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atividades.POO", "Atividades.POO\Atividades.POO.csproj", "{86A2BDD2-7701-45CD-A2B1-571E2907B17C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{BD85498C-5405-4560-85E4-CD51205A6FE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -24,5 +25,16 @@ Global
 		{A2040025-0B07-46FB-A05A-144B3908EB04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2040025-0B07-46FB-A05A-144B3908EB04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2040025-0B07-46FB-A05A-144B3908EB04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3F14BCB-1B2B-48A8-9AAA-FD44004110F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3F14BCB-1B2B-48A8-9AAA-FD44004110F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3F14BCB-1B2B-48A8-9AAA-FD44004110F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3F14BCB-1B2B-48A8-9AAA-FD44004110F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86A2BDD2-7701-45CD-A2B1-571E2907B17C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86A2BDD2-7701-45CD-A2B1-571E2907B17C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86A2BDD2-7701-45CD-A2B1-571E2907B17C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86A2BDD2-7701-45CD-A2B1-571E2907B17C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
