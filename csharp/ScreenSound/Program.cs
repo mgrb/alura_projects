@@ -50,7 +50,7 @@ void AvaliarOpcaoEscolhida(int opc)
             AvaliarBanda();
             break;
         case 4:
-            PrintMensagemTitulo("Mostrar média de avaliações de uma banda");
+            MostrarMediaAvaliacoes();
             break;
         case 0:
             PrintMensagemTitulo("Saindo...");
@@ -60,6 +60,26 @@ void AvaliarOpcaoEscolhida(int opc)
             break;
     }
 
+}
+
+void MostrarMediaAvaliacoes()
+{
+    Console.Clear();
+    PrintBoasVindas();
+    PrintMensagemTitulo("Mostrar média de avaliações de uma banda");
+
+    foreach (var banda in bandas)
+    {
+        if (banda.Value.Count == 0)
+        {
+            Console.WriteLine($"Banda: {banda.Key} - Média: Sem avaliações");
+        } else {
+            Console.WriteLine($"Banda: {banda.Key} - Média: {banda.Value.Average():N2}");
+        }
+    }
+
+    Console.WriteLine("\nPressione qualquer tecla para continuar...");
+    Console.ReadKey();
 }
 
 void RegistrarBanda()

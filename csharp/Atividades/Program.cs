@@ -18,7 +18,6 @@ void PrintListaDesafios(List<string> desafios)
     Console.WriteLine("0 - Sair");
 }
 
-
 void PrintTitulo(string titulo)
 {
     int tamanho = titulo.Length;
@@ -51,12 +50,90 @@ void ChamarDesafio(int opc)
         case 5:
             Desafio_M03_ATV08();
             break;
+        case 6:
+            Desafio_M04_ATV08();
+            break;
         case 0:
             Console.WriteLine("Saindo...");
             break;
         default:
             Console.WriteLine("Opção inválida");
             break;
+    }
+}
+
+void Desafio_M04_ATV08()
+{
+    /*
+1. Criar um dicionário que represente um aluno, com uma lista de notas, e mostre a média de suas notas na tela.
+    */
+    Dictionary<string, List<float>> alunos = new Dictionary<string, List<float>>();
+    alunos.Add("Fulano", new List<float> { 8.5f, 9.0f, 7.5f });
+    alunos.Add("Ciclano", new List<float> { 6.5f, 7.0f, 8.5f });
+    alunos.Add("Beltrano", new List<float> { 9.5f, 9.0f, 9.5f });
+
+    foreach (var aluno in alunos)
+    {
+        if(aluno.Value.Count > 0)
+        {
+            Console.WriteLine($"Média de {aluno.Key}: {aluno.Value.Average()}");
+        } else {
+            Console.WriteLine($"Sem notas para {aluno.Key}");
+        }
+    }
+
+/*
+2. Criar um programa que gerencie o estoque de uma loja. Utilize um dicionário para armazenar produtos e suas quantidades em estoque e mostre, a partir do nome de um produto, sua quantidade em estoque.
+*/
+    Dictionary<string, int> estoque = new Dictionary<string, int>();
+    estoque.Add("Camiseta", 10);
+    estoque.Add("Calça", 5);
+    estoque.Add("Tênis", 3);
+
+    Console.Write("Digite o nome do produto: ");
+    string produto = Console.ReadLine()!;
+    if (estoque.ContainsKey(produto))
+    {
+        Console.WriteLine($"Quantidade em estoque de {produto}: {estoque[produto]}");
+    } else {
+        Console.WriteLine("Produto não encontrado");
+    }
+/*
+3. Crie um programa que implemente um quiz simples de perguntas e respostas. Utilize um dicionário para armazenar as perguntas e as respostas corretas.
+*/
+    Dictionary<string, string> perguntas = new Dictionary<string, string>();
+    perguntas.Add("Qual a capital do Brasil?", "Brasília");
+    perguntas.Add("Quem descobriu o Brasil?", "Pedro Álvares Cabral");
+    perguntas.Add("Qual é o maior planeta do sistema solar?", "Júpiter");
+
+    int acertos = 0;
+    foreach (var pergunta in perguntas)
+    {
+        Console.WriteLine(pergunta.Key);
+        Console.Write("Resposta: ");
+        string resposta = Console.ReadLine()!;
+        if (pergunta.Value.ToUpper().Equals(resposta.ToUpper()))
+        {
+            acertos++;
+        }
+    }
+/*
+4. Criar um programa que simule um sistema de login utilizando um dicionário para armazenar nomes de usuário e senhas.
+*/
+    Dictionary<string, string> usuarios = new Dictionary<string, string>();
+    usuarios.Add("fulano", "123456");
+    usuarios.Add("ciclano", "654321");
+    usuarios.Add("beltrano", "987654");
+
+    Console.Write("Usuário: ");
+    string usuario = Console.ReadLine()!;
+    Console.Write("Senha: ");
+    string senha = Console.ReadLine()!;
+    if (usuarios.ContainsKey(usuario) && usuarios[usuario].Equals(senha))
+    {
+        Console.WriteLine("Login efetuado com sucesso!");
+    } else {
+        Console.WriteLine("Usuário ou senha inválidos");
     }
 }
 
@@ -246,7 +323,8 @@ List<string> desafios = new List<string> {
     "M02-AT08 :: Desafio: hora da prática",
     "M02-AT09 :: Faça como eu fiz: primeiro jogo com C#" ,
     "M03-AT07 :: Desafio: hora da prática",
-    "M03-AT08 :: Faça como eu fiz" };
+    "M03-AT08 :: Faça como eu fiz",
+    "M04-AT08 :: Desafio: hora da prática" };
 while (true)
 {
     Console.Clear();
