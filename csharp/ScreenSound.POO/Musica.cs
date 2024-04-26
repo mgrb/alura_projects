@@ -7,6 +7,7 @@ public class Musica
     public string? Artista { get; set; }
     public int Duracao { get; set; }
     public bool Disponivel { get; set; }
+    public String DescricaoResumida => $"{Nome} - {Artista}";
 
     private string DisponivelMsg{
         get => Disponivel ? "Sim" : "Não";
