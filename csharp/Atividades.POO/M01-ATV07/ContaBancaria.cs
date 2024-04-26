@@ -12,7 +12,7 @@ namespace Atividades.POO;
 public class ContaBancaria
 {
     public required int Numero { get; set; }
-    public required string Titular { get; set; }
+    public required Titular Titular { get; set; }
     public double Saldo { get; set; }
     public string? Senha { get; set; }
 
@@ -24,7 +24,7 @@ public class ContaBancaria
     public string ExibirInformacoes()
     {
         StringBuilder sb = new();
-        sb.AppendLine($"Titular: {Titular}");
+        sb.AppendLine($"Titular: {Titular.Nome}");
         sb.AppendLine($"Saldo: {Saldo}");
         sb.AppendLine($"Número: {Numero}");
         sb.AppendLine($"Senha: { string.Empty.PadLeft(Senha.Length,'*')}");
